@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "338470684127",
+    "project_id": "peladapp-c1338",
+    "storage_bucket": "peladapp-c1338.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338470684127:android:5e7a3361ae2fdf7a54b06a",
+        "android_client_info": {
+          "package_name": "com.example.peladapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChuKCtj61OVYWR9kLqYvdmtuxRUDF4NOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
