@@ -33,7 +33,7 @@ class MatchRoomActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View) {
         when (view.id) {
             R.id.startMatchButton -> {
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, MatchActivity::class.java)
                 startActivity(intent)
             }
         }
