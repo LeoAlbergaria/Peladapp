@@ -141,5 +141,19 @@
             android:layout_marginBottom="16dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/startMatchButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Start Match"
+            android:textColor="#0BCE83"
+            app:layout_constraintTop_toBottomOf="@+id/outButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

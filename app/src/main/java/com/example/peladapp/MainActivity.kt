@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val user = sp.getUser()
 
         if(user != null) {Toast.makeText(this , "Welcome back!", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, PrepareMatchActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                                 user?.uid?.let { userId ->
                                     sp.setUser(userId)
                                     Toast.makeText(this , "Welcome $email", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, PrepareMatchActivity::class.java)
+                                    val intent = Intent(this, HomeActivity::class.java)
                                     startActivity(intent)
                                 }
                             } else {

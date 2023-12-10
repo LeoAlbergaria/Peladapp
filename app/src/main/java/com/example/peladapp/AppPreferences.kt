@@ -17,4 +17,19 @@ class AppPreferences(context: Context) {
     fun getUser(): String? {
         return sp.getString(userKey, null)
     }
+
+    fun logOutUser() {
+        sp.edit().putString(userKey, null).apply()
+    }
+
+    companion object {
+        private var instance: AppPreferences? = null
+
+        fun getInstance(context: Context): AppPreferences {
+            if (instance == null) {
+                instance = AppPreferences(context)
+            }
+            return instance!!
+        }
+    }
 }
