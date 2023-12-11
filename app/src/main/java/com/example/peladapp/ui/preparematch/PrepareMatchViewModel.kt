@@ -12,9 +12,10 @@ import java.util.*
 
 class PrepareMatchViewModel : ViewModel() {
 
-    private val _matchCreated = MutableLiveData<Boolean>()
-    val matchCreated: LiveData<Boolean>
+    private val _matchCreated = MutableLiveData<Match?>()
+    val matchCreated: LiveData<Match?>
         get() = _matchCreated
+
 
     private val db = Firebase.firestore
 
@@ -25,10 +26,25 @@ class PrepareMatchViewModel : ViewModel() {
         db.collection("matches").document(code)
             .set(match)
             .addOnSuccessListener {
-                _matchCreated.value = true
+                _matchCreated.value = match
             }
             .addOnFailureListener {
-                _matchCreated.value = false
+                _matchCreated.value = null
+            }
+    }
+
+    fun enterExistingMatch(code: String) {
+        db.collection("matches").document(code).get()
+            .addOnSuccessListener { documentSnapshot ->
+                val match = documentSnapshot.toObject(Match::class.java)
+                if (match != null && !match.hasStarted) {
+                    _matchCreated.value = match
+                } else {
+                    _matchCreated.value = null
+                }
+            }
+            .addOnFailureListener {
+                _matchCreated.value = null
             }
     }
 

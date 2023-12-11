@@ -1,5 +1,6 @@
 package com.example.peladapp.ui.preparematch
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -37,9 +38,10 @@ class PrepareMatchFragment : Fragment(), View.OnClickListener {
         binding?.numberOfPlayersPicker?.let { setupNumberPicker(it) }
         binding?.playersPerTeamPicker?.let { setupNumberPicker(it) }
 
-        viewModel.matchCreated.observe(viewLifecycleOwner) { result ->
-            if (result) {
+        viewModel.matchCreated.observe(viewLifecycleOwner) { match ->
+            if (match != null) {
                 val intent = Intent(requireContext(), MatchRoomActivity::class.java)
+                intent.putExtra("MATCH", match)
                 startActivity(intent)
             } else {
                 Toast.makeText(requireContext(), "Error creating Match!", Toast.LENGTH_SHORT).show()
@@ -60,7 +62,12 @@ class PrepareMatchFragment : Fragment(), View.OnClickListener {
                 viewModel.createMatch(numberOfPlayers, playersPerTeam)
             }
             R.id.insertCodeButton -> {
-                // Handle insert code button click
+                val enteredCode = binding?.codeEditText?.text.toString()
+                if (enteredCode.isNotEmpty()) {
+                    viewModel.enterExistingMatch(enteredCode)
+                } else {
+                    Toast.makeText(requireContext(), "Please enter a code", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
@@ -69,4 +76,5 @@ class PrepareMatchFragment : Fragment(), View.OnClickListener {
         picker.minValue = 0
         picker.maxValue = 100
     }
+
 }

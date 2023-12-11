@@ -40,7 +40,7 @@
             android:id="@+id/codeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DJKHFGDIU"
+            android:text=""
             android:textColor="#00FF00"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/codeTitle"
