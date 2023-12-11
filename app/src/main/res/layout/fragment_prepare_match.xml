@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PrepareMatchFragment"
+    tools:context=".ui.preparematch.PrepareMatchFragment"
     android:background="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +31,8 @@
             app:layout_constraintTop_toBottomOf="@+id/numberOfPlayersTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:theme="@style/AppTheme.Picker"/>
 
         <TextView
             android:id="@+id/playersPerTeamTitle"
@@ -53,7 +54,8 @@
             app:layout_constraintTop_toBottomOf="@+id/playersPerTeamTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:theme="@style/AppTheme.Picker" />
 
         <Button
             android:id="@+id/createMatchButton"

@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.PeladApp" parent="Base.Theme.PeladApp" />
+
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
 </resources>

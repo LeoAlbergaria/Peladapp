@@ -6,45 +6,32 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@android:color/background_dark"
-    tools:context=".MatchActivity">
+    tools:context=".ui.match.MatchActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="?attr/actionBarSize"
-            android:minHeight="?attr/actionBarSize"
-            app:title="Pelada"
-            app:navigationIcon="@drawable/baseline_arrow_back_24"
-            app:titleTextColor="@color/white"
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/iconRelativeLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-
-        <TextView
-        android:id="@+id/timeCounterTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
-        android:textSize="60sp"
-        android:text="00:00"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintBottom_toTopOf="@+id/iconRelativeLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginTop="16dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginTop="16dp" />
 
         <RelativeLayout
             android:id="@+id/iconRelativeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/timeCounterTextView"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer"
             app:layout_constraintBottom_toTopOf="@+id/team1TitleTextView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -141,7 +128,7 @@
         android:layout_marginBottom="16dp"/>
 
         <Button
-            android:id="@+id/outButton"
+            android:id="@+id/endMatchButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="End Match"

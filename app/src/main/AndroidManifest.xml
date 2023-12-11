@@ -13,22 +13,22 @@
         android:theme="@style/Theme.PeladApp"
         tools:targetApi="31">
         <activity
-            android:name=".MatchActivity"
+            android:name=".ui.match.MatchActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".MatchRoomActivity"
+            android:name=".ui.matchroom.MatchRoomActivity"
             android:exported="false" />
         <activity
             android:name=".PrepareMatchActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

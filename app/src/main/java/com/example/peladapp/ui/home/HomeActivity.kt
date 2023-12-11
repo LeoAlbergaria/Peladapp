@@ -1,11 +1,12 @@
-package com.example.peladapp
+package com.example.peladapp.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.peladapp.ui.preparematch.PrepareMatchFragment
+import com.example.peladapp.R
+import com.example.peladapp.ui.user.UserFragment
 import com.example.peladapp.databinding.ActivityHomeBinding
-import com.example.peladapp.databinding.ActivityPrepareMatchBinding
 
 class HomeActivity : AppCompatActivity() {
 
