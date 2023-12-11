@@ -41,7 +41,7 @@ class PrepareMatchFragment : Fragment(), View.OnClickListener {
         viewModel.matchCreated.observe(viewLifecycleOwner) { match ->
             if (match != null) {
                 val intent = Intent(requireContext(), MatchRoomActivity::class.java)
-                intent.putExtra("MATCH", match)
+                intent.putExtra("MATCH-ROOM", match)
                 startActivity(intent)
             } else {
                 Toast.makeText(requireContext(), "Error creating Match!", Toast.LENGTH_SHORT).show()

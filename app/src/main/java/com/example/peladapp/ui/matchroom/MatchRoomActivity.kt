@@ -36,7 +36,7 @@ class MatchRoomActivity : AppCompatActivity(), View.OnClickListener {
 
         viewModel = ViewModelProvider(this).get(MatchRoomViewModel::class.java)
 
-        val match: Match? = intent.getSerializableExtra("MATCH") as? Match
+        val match: Match? = intent.getSerializableExtra("MATCH-ROOM") as? Match
 
         if (match != null) {
             viewModel.fetchData(match)
@@ -69,6 +69,8 @@ class MatchRoomActivity : AppCompatActivity(), View.OnClickListener {
         when (view.id) {
             R.id.startMatchButton -> {
                 val intent = Intent(this, MatchActivity::class.java)
+                val playersList = viewModel.confirmedList.value.orEmpty()
+                intent.putExtra("PLAYER_LIST", ArrayList(playersList))
                 startActivity(intent)
             }
             R.id.confirmButton -> {
