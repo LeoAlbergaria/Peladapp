@@ -1,5 +1,60 @@
 <resources>
     <string name="app_name">PeladApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- SignUpActivity -->
+    <string name="name_hint">Nome</string>
+    <string name="email_hint">E-mail</string>
+    <string name="password_hint">Senha</string>
+    <string name="repeat_password_hint">Repetir Senha</string>
+    <string name="sign_up_button">Cadastrar</string>
+
+    <!-- HomeActivity -->
+    <string name="create_match_text">Criar Pelada</string>
+    <string name="join_match_text">Entrar na Pelada</string>
+
+    <!-- MainActivity -->
+    <string name="peladapp_text">PeladApp</string>
+    <string name="username_hint">Nome de Usuário</string>
+    <string name="login_button">Entrar</string>
+    <string name="sign_up_text">Cadastrar</string>
+
+    <!-- MatchActivity -->
+    <string name="team1_title">Time 1 - %1$d gols</string>
+    <string name="team2_title">Time 2 - %1$d gols</string>
+    <string name="players_title">Lista de Jogadores</string>
+    <string name="end_match_button">Encerrar Pelada</string>
+    <string name="dialog_title">Selecionar Time</string>
+    <string name="team_option_1">Time 1</string>
+    <string name="team_option_2">Time 2</string>
+
+    <!-- PrepareMatchFragment -->
+    <string name="number_of_players_title">Número de Jogadores</string>
+    <string name="players_per_team_title">Jogadores por Time</string>
+    <string name="create_match_button">Criar Pelada</string>
+    <string name="code_hint">Código</string>
+    <string name="insert_code_button">Inserir Código</string>
+
+    <!-- UserFragment -->
+    <string name="enter_name_hint">Digite o Nome</string>
+    <string name="change_name_button">Alterar Nome</string>
+    <string name="statistics_text">Estatísticas</string>
+    <string name="gols_text">Gols</string>
+    <string name="assists_text">Assistências</string>
+    <string name="blocks_text">Bloqueios</string>
+    <string name="log_out_button">Sair</string>
+
+    <!-- MatchRoomActivity -->
+    <string name="title_pelada">Pelada</string>
+    <string name="code">Código</string>
+    <string name="confirmed_list">Lista de Confirmados</string>
+    <string name="waiting_list">Lista de Espera</string>
+    <string name="out_list">Lista de Ausentes</string>
+    <string name="confirm_button">Confirmar</string>
+    <string name="out_button">Sair</string>
+    <string name="start_match_button">Iniciar Pelada</string>
+    <string name="players">jogadores</string>
+
+    <!-- menu -->
+    <string name="menu_title_match">Pelada</string>
+    <string name="menu_title_user">Usuário</string>
 </resources>

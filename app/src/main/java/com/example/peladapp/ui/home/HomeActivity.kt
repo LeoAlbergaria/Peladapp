@@ -2,6 +2,7 @@ package com.example.peladapp.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.peladapp.ui.preparematch.PrepareMatchFragment
 import com.example.peladapp.R
@@ -30,6 +31,11 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         }
+
+        val bottomNavigationBar = binding.bottomNavigationView
+        val defaultIconColor = ContextCompat.getColorStateList(this, R.color.white)
+        bottomNavigationBar.itemIconTintList = defaultIconColor
+        bottomNavigationBar.itemTextColor = defaultIconColor
     }
 
     private fun replaceFragment(fragment: Fragment) {

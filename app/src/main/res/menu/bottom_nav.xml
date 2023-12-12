@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Match"
+    <item android:title="@string/menu_title_match"
         android:id="@+id/match"
         android:icon="@drawable/baseline_sports_soccer_24"/>
 
-    <item android:title="User"
+    <item android:title="@string/menu_title_user"
         android:id="@+id/user"
         android:icon="@drawable/baseline_person_24"/>
 </menu>

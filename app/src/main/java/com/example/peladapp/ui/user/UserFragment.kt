@@ -34,6 +34,10 @@ class UserFragment : Fragment() {
             activity?.onBackPressed()
         }
 
+        val username = viewModel.getUserName()
+        username?.let {
+            binding?.editNameEditText?.hint = username
+        }
 
         binding?.editNameButton?.setOnClickListener{
             val username = binding?.editNameEditText?.text?.toString()

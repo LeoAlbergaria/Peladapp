@@ -7,6 +7,11 @@ import com.google.firebase.auth.userProfileChangeRequest
 import com.google.firebase.ktx.Firebase
 
 class UserViewModel : ViewModel() {
+
+    fun getUserName(): String? {
+        return Firebase.auth.currentUser?.displayName
+    }
+
     fun changeUserName(username: String, completion: (Boolean) -> Unit) {
         val user = Firebase.auth.currentUser
 

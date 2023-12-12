@@ -45,6 +45,7 @@ class MatchRoomActivity : AppCompatActivity(), View.OnClickListener {
         viewModel.selectedMatch.observe(this) { match ->
             match?.let {
                 binding.codeText.text = it.code
+                binding.confirmedListCapacity.text = "(" + it.numberOfPlayers.toString() + " " + "players" + ")"
             }
         }
 

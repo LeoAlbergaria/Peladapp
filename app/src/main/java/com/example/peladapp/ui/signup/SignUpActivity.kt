@@ -37,10 +37,11 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
                 val email = binding.emailEditText.text.toString()
                 val password = binding.passwordEditText.text.toString()
                 val confirmPassword = binding.repeatPasswordEditText.text.toString()
+                val username = binding.nameEditText.text.toString()
 
                 if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                     if (password == confirmPassword) {
-                        viewModel.signUpUser(email, password) { success, message ->
+                        viewModel.signUpUser(email, password, username) { success, message ->
                             if (success) {
                                 Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show()
                                 onBackPressed()

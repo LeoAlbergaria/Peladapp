@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PeladApp</string>
+    <!-- SignUpActivity -->
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="repeat_password_hint">Repeat Password</string>
+    <string name="sign_up_button">Sign Up</string>
+
+    <!-- HomeActivity -->
+    <string name="create_match_text">Create Match</string>
+    <string name="join_match_text">Join Match</string>
+
+    <!-- MainActivity -->
+    <string name="peladapp_text">PeladApp</string>
+    <string name="username_hint">Username</string>
+    <string name="login_button">Login</string>
+    <string name="sign_up_text">Sign Up</string>
+
+    <!-- MatchActivity -->
+    <string name="team1_title">Team 1 - %1$d goals</string>
+    <string name="team2_title">Team 2 - %1$d goals</string>
+    <string name="players_title">List of Players</string>
+    <string name="end_match_button">End Match</string>
+    <string name="dialog_title">Select Team</string>
+    <string name="team_option_1">Team 1</string>
+    <string name="team_option_2">Team 2</string>
+
+    <!-- PrepareMatchFragment -->
+    <string name="number_of_players_title">Number of Players</string>
+    <string name="players_per_team_title">Players per Team</string>
+    <string name="create_match_button">Create Match</string>
+    <string name="code_hint">Code</string>
+    <string name="insert_code_button">Insert Code</string>
+
+    <!-- UserFragment -->
+    <string name="enter_name_hint">Enter Name</string>
+    <string name="change_name_button">Change Name</string>
+    <string name="statistics_text">Statistics</string>
+    <string name="gols_text">Goals</string>
+    <string name="assists_text">Assists</string>
+    <string name="blocks_text">Blocks</string>
+    <string name="log_out_button">Log Out</string>
+
+    <!-- MatchRoomActivity -->
+    <string name="title_pelada">Pelada</string>
+    <string name="code">Code</string>
+    <string name="confirmed_list">Confirmed List</string>
+    <string name="waiting_list">Waiting List</string>
+    <string name="out_list">Out List</string>
+    <string name="confirm_button">Confirm</string>
+    <string name="out_button">Out</string>
+    <string name="start_match_button">Start Match</string>
+    <string name="players">players</string>
+
+    <!-- menu -->
+    <string name="menu_title_match">Match</string>
+    <string name="menu_title_user">User</string>
+</resources>
