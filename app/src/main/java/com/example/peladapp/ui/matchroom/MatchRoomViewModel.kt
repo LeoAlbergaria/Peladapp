@@ -8,6 +8,12 @@ import com.example.peladapp.model.Player
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * ViewModel for managing match room details.
+ *
+ * This ViewModel handles the retrieval and update of match details, player lists,
+ * and player statuses within a match room.
+ */
 class MatchRoomViewModel : ViewModel() {
 
     private val _selectedMatch = MutableLiveData<Match?>()
@@ -32,6 +38,11 @@ class MatchRoomViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
 
+    /**
+     * Fetches match data and initializes LiveData objects.
+     *
+     * @param match The match object containing match details.
+     */
     fun fetchData(match: Match?) {
         _selectedMatch.value = match
 
@@ -40,6 +51,11 @@ class MatchRoomViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Updates the player status and sends the updated player to the database.
+     *
+     * @param status The status code representing the player status.
+     */
     fun updatePlayer(status: Int) {
         val user = FirebaseAuth.getInstance().currentUser
         user?.let {
@@ -59,6 +75,7 @@ class MatchRoomViewModel : ViewModel() {
                 _allPlayersList.value = currentList
             }
         }
+
         val playerList = _allPlayersList.value
         playerList?.let {
             updatePlayerLists(it)
@@ -69,6 +86,11 @@ class MatchRoomViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Fetches the list of players for the specified match from the Firestore database.
+     *
+     * @param matchCode The code identifying the match.
+     */
     private fun fetchPlayersForMatch(matchCode: String) {
         db.collection("matches").document(matchCode).collection("players")
             .get()
@@ -84,6 +106,11 @@ class MatchRoomViewModel : ViewModel() {
             }
     }
 
+    /**
+     * Sends the player data to the Firestore database for the specified match.
+     *
+     * @param player The player object to be sent to the database.
+     */
     private fun sendPlayerToDatabase(player: Player) {
         val matchCode = _selectedMatch.value?.code
         matchCode?.let {
@@ -99,6 +126,11 @@ class MatchRoomViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Updates LiveData objects with the provided list of players and categorizes them into different lists.
+     *
+     * @param players The list of players to be categorized.
+     */
     private fun updatePlayerLists(players: List<Player>) {
         _allPlayersList.value = players
         _confirmedList.value = players.filter { it.statusCode == 1 }

@@ -86,7 +86,7 @@
                     android:id="@+id/numberGols"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
+                    android:text="0"
                     android:textSize="24sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
@@ -111,7 +111,7 @@
                     android:id="@+id/numberAssists"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5"
+                    android:text="0"
                     android:textSize="24sp"
                     android:textColor="@color/white"/>
             </LinearLayout>
@@ -136,7 +136,7 @@
                     android:id="@+id/numberBlocks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3"
+                    android:text="0"
                     android:textSize="24sp"
                     android:textColor="@color/white"/>
             </LinearLayout>

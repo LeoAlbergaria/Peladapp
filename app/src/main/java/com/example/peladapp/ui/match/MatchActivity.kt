@@ -1,10 +1,10 @@
 package com.example.peladapp.ui.match
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import android.widget.Chronometer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +15,12 @@ import com.example.peladapp.R
 import com.example.peladapp.databinding.ActivityMatchBinding
 import com.example.peladapp.model.Player
 
+/**
+ * Activity for managing and conducting a match.
+ *
+ * This activity allows users to start, stop, and end a match. It provides options for managing player lists,
+ * assigning players to teams, and tracking goals scored by each team.
+ */
 class MatchActivity : AppCompatActivity(), View.OnClickListener, PlayerItemClickListener {
 
     private lateinit var binding: ActivityMatchBinding
@@ -36,13 +42,13 @@ class MatchActivity : AppCompatActivity(), View.OnClickListener, PlayerItemClick
         }
 
         viewModel.playersList.observe(this) { playersList ->
-            setupRecyclerView(binding.playersRecyclerView, playersList, 1)
+            setupRecyclerView(binding.playersRecyclerView, playersList, R.id.playersRecyclerView)
         }
         viewModel.team1Players.observe(this) { playersList ->
-            setupRecyclerView(binding.team1RecyclerView, playersList, 2)
+            setupRecyclerView(binding.team1RecyclerView, playersList, R.id.team1RecyclerView)
         }
         viewModel.team2Players.observe(this) { playersList ->
-            setupRecyclerView(binding.team2RecyclerView, playersList, 3)
+            setupRecyclerView(binding.team2RecyclerView, playersList, R.id.team2RecyclerView)
         }
         viewModel.team1Goals.observe(this) { gols ->
             binding.team1TitleTextView.text = String.format(getString(R.string.team1_title), gols)
@@ -61,7 +67,7 @@ class MatchActivity : AppCompatActivity(), View.OnClickListener, PlayerItemClick
     override fun onClick(view: View) {
         when (view.id) {
             R.id.playIcon -> {
-                isCounting = if(isCounting){
+                isCounting = if (isCounting) {
                     chronometer.stop()
                     false
                 } else {
@@ -71,8 +77,8 @@ class MatchActivity : AppCompatActivity(), View.OnClickListener, PlayerItemClick
             }
             R.id.stopIcon -> {
                 viewModel.resetMatch()
-                chronometer.base = SystemClock.elapsedRealtime();
-                chronometer.stop();
+                chronometer.base = SystemClock.elapsedRealtime()
+                chronometer.stop()
             }
             R.id.endMatchButton -> {
                 showConfirmationDialog()
@@ -112,16 +118,15 @@ class MatchActivity : AppCompatActivity(), View.OnClickListener, PlayerItemClick
         dialog.show()
     }
 
-
     override fun onPlayerItemClick(player: Player, recyclerViewId: Int) {
         when (recyclerViewId) {
-            1 -> {
+            R.id.playersRecyclerView -> {
                 showTeamSelectionDialog(player)
             }
-            2 -> {
+            R.id.team1RecyclerView -> {
                 viewModel.addGoalToTeam1()
             }
-            3 -> {
+            R.id.team2RecyclerView -> {
                 viewModel.addGoalToTeam2()
             }
         }
